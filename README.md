@@ -9,7 +9,7 @@
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-teal.svg)](https://fastapi.tiangolo.com/)
 [![Database](https://img.shields.io/badge/Database-PostgreSQL%20%7C%20Supabase-blue.svg)](https://supabase.com/)
-[![Release](https://img.shields.io/badge/Release-v1.5.0-success.svg)](https://github.com/adarsh0044321/HostelDesk/releases/tag/v1.5.0)
+[![Release](https://img.shields.io/badge/Release-v1.0-success.svg)](https://github.com/adarsh0044321/HostelDesk/releases/tag/v1.0)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
@@ -28,7 +28,7 @@ Collegiate housing facilities regularly suffer from disorganized maintenance tra
 | :---: | :---: |
 | <img src="docs/screenshots/student_preview.png" width="320" alt="Student App Preview" /> | <img src="docs/screenshots/admin_preview.png" width="320" alt="Admin App Preview" /> |
 | **For Resident Students** | **For Wardens, Staff & Directors** |
-| [📥 Download Student APK (v1.5.0)](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.5.0/HostelDesk-Student-v1.5.apk) | [📥 Download Admin APK (v1.5.0)](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.5.0/HostelDesk-Admin-v1.5.apk) |
+| [📥 Download Student APK (v1.0)](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.0/HostelDesk-Student-v1.0.apk) | [📥 Download Admin APK (v1.0)](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.0/HostelDesk-Admin-v1.0.apk) |
 
 > 💡 **Release Assets**: The latest signed debug APK binaries are available directly on the **[GitHub Releases Page](https://github.com/adarsh0044321/HostelDesk/releases)**.
 

@@ -1,6 +1,6 @@
-# HostelDesk v1.5.0 — Official Platform Release
+# HostelDesk v1.0 — Initial Platform Launch
 
-Welcome to the official production release of **HostelDesk**, a comprehensive, multi-tenant collegiate housing issue-management and operations platform designed for university residences, student dormitories, and campus facility management.
+Welcome to the official **v1.0 launch** of **HostelDesk**, a comprehensive, multi-tenant collegiate housing issue-management and operations platform designed for university residences, student dormitories, and campus facility management.
 
 ---
 
@@ -10,12 +10,12 @@ Directly install the native Android applications on Android 8.0+ (API 26+) devic
 
 | Application | Target Audience | Package Name | APK Asset |
 | :--- | :--- | :--- | :--- |
-| **HostelDesk Student** | Resident Students | `com.adarshsingh.hosteldesk` | [HostelDesk-Student-v1.5.apk](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.5.0/HostelDesk-Student-v1.5.apk) |
-| **HostelDesk Admin** | Wardens, Staff, Directors | `com.adarshsingh.adminhosteldesk` | [HostelDesk-Admin-v1.5.apk](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.5.0/HostelDesk-Admin-v1.5.apk) |
+| **HostelDesk Student** | Resident Students | `com.adarshsingh.hosteldesk` | [HostelDesk-Student-v1.0.apk](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.0/HostelDesk-Student-v1.0.apk) |
+| **HostelDesk Admin** | Wardens, Staff, Directors | `com.adarshsingh.adminhosteldesk` | [HostelDesk-Admin-v1.0.apk](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.0/HostelDesk-Admin-v1.0.apk) |
 
 ---
 
-## 🌟 What's New in v1.5.0
+## 🌟 Platform Highlights in v1.0 (First Launch)
 
 ### 🎓 1. Student Resident Android Experience
 - **AI-Assisted Issue Reporting**: Real-time NLP category recommendation, safety hazard alert banner, and automatic priority rating.
