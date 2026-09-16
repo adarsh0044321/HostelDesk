@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HostelDesk</string>
+    <string name="institutional_subtitle">Campus Residence</string>
+    <string name="title_home">Home</string>
+    <string name="title_requests">Requests</string>
+    <string name="title_report">Report</string>
+    <string name="title_alerts">Alerts</string>
+    <string name="title_profile">Profile</string>
+</resources>

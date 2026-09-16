@@ -1,0 +1,49 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="340dp"
+    android:height="96dp"
+    android:viewportWidth="340"
+    android:viewportHeight="96">
+    <path
+        android:fillColor="#F3F3F7"
+        android:pathData="M0,0h340v96h-340z" />
+    <!-- Block Schematics -->
+    <path
+        android:strokeColor="#C1C6D4"
+        android:strokeWidth="1"
+        android:pathData="M20,20 L90,20 L90,76 L20,76 Z" />
+    <path
+        android:strokeColor="#A48B84"
+        android:strokeWidth="0.75"
+        android:pathData="M35,20 L35,76 M60,20 L60,76 M20,48 L90,48" />
+    <!-- Center Riser Block -->
+    <path
+        android:strokeColor="#BA5333"
+        android:strokeWidth="1.5"
+        android:pathData="M120,16 L230,16 L230,80 L120,80 Z" />
+    <path
+        android:strokeColor="#BA5333"
+        android:strokeWidth="0.75"
+        android:strokeAlpha="0.6"
+        android:pathData="M140,16 L140,80 M185,16 L185,80 M120,44 L230,44" />
+    <!-- Right Wing Block -->
+    <path
+        android:strokeColor="#C1C6D4"
+        android:strokeWidth="1"
+        android:pathData="M255,24 L320,24 L320,72 L255,72 Z" />
+    <!-- Connectors -->
+    <path
+        android:strokeColor="#53A071"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M90,48 L120,44 M230,44 L255,48" />
+    <!-- Focal Nodes -->
+    <path
+        android:fillColor="#53A071"
+        android:pathData="M120,44m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+    <path
+        android:fillColor="#BA5333"
+        android:pathData="M230,44m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+    <path
+        android:fillColor="#C1C6D4"
+        android:pathData="M90,48m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+</vector>

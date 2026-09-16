@@ -1,0 +1,84 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="340dp"
+    android:height="96dp"
+    android:viewportWidth="340"
+    android:viewportHeight="96">
+    <!-- Sky background -->
+    <path
+        android:fillColor="#F3F3F7"
+        android:pathData="M0,0h340v96h-340z" />
+    <!-- Sun -->
+    <path
+        android:fillColor="#FFDBD1"
+        android:fillAlpha="0.6"
+        android:pathData="M280,24m-14,0a14,14 0,1 1,28 0a14,14 0,1 1,-28 0" />
+    <!-- Left Residential Wing -->
+    <path
+        android:fillColor="#E2E2E6"
+        android:pathData="M20,32h90v64h-90z" />
+    <!-- Left windows row 1 -->
+    <path
+        android:fillColor="#BA5333"
+        android:pathData="M30,42h10v14h-10z M48,42h10v14h-10z M84,42h10v14h-10z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M66,42h10v14h-10z" />
+    <!-- Left windows row 2 -->
+    <path
+        android:fillColor="#BA5333"
+        android:pathData="M48,64h10v14h-10z M66,64h10v14h-10z M84,64h10v14h-10z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,64h10v14h-10z" />
+    <!-- Center Clock Tower -->
+    <path
+        android:fillColor="#DEDEE2"
+        android:pathData="M118,16h76v80h-76z" />
+    <!-- Clock Tower Roof -->
+    <path
+        android:fillColor="#BA5333"
+        android:pathData="M118,16 L156,4 L194,16 Z" />
+    <!-- Clock Face -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M156,28m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0" />
+    <!-- Clock Hands -->
+    <path
+        android:strokeColor="#9A3C1D"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M156,28 L156,25 M156,28 L158,28" />
+    <!-- Tower Arch Entrance -->
+    <path
+        android:fillColor="#515F74"
+        android:pathData="M144,96 V64 A12,12 0 0 1 168,64 V96 Z" />
+    <!-- Right Dormitory Wing -->
+    <path
+        android:fillColor="#E8E8EC"
+        android:pathData="M202,28h118v68h-118z" />
+    <!-- Right Windows -->
+    <path
+        android:fillColor="#BA5333"
+        android:pathData="M214,38h12v16h-12z M258,38h12v16h-12z M236,62h12v16h-12z M280,62h12v16h-12z" />
+    <path
+        android:fillColor="#FFDBD1"
+        android:pathData="M236,38h12v16h-12z M280,38h12v16h-12z M214,62h12v16h-12z M258,62h12v16h-12z" />
+    <!-- Courtyard Shrubs and Trees -->
+    <path
+        android:fillColor="#31805E"
+        android:pathData="M6,96 C6,85 15,78 24,78 C33,78 40,86 40,96 Z" />
+    <path
+        android:fillColor="#0F6746"
+        android:pathData="M106,86m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0" />
+    <path
+        android:fillColor="#31805E"
+        android:pathData="M204,88m-9,0a9,9 0,1 1,18 0a9,9 0,1 1,-18 0" />
+    <path
+        android:fillColor="#0F6746"
+        android:pathData="M304,96 C304,84 314,76 324,76 C334,76 342,85 342,96 Z" />
+    <!-- Walkway Line -->
+    <path
+        android:strokeColor="#B9C7DF"
+        android:strokeWidth="2"
+        android:pathData="M0,95 L340,95" />
+</vector>

@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.HostelDeskStudent" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/colorPrimaryHover</item>
+        <item name="android:colorBackground">@color/colorCanvas</item>
+        <item name="colorSurface">@color/colorCard</item>
+        <item name="colorOnSurface">@color/colorCharcoal</item>
+        <item name="colorOnSurfaceVariant">@color/colorMutedText</item>
+        <item name="android:statusBarColor">@color/colorCanvas</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/colorCard</item>
+    </style>
+</resources>

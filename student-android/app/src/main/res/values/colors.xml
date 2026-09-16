@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorCanvas">#FAF8F5</color>
+    <color name="colorCard">#FFFFFF</color>
+    <color name="colorBorder">#E8E4DD</color>
+    <color name="colorBorderSubtle">#F0EDE6</color>
+    <color name="colorPrimary">#BA5333</color>
+    <color name="colorPrimaryHover">#A04022</color>
+    <color name="colorPrimaryContainer">#FFECE5</color>
+    <color name="colorCharcoal">#1A1C1F</color>
+    <color name="colorMutedText">#67625B</color>
+    <color name="colorSoftText">#8C8F94</color>
+
+    <color name="colorSage">#4A6B5D</color>
+    <color name="colorSageLight">#E8F0EC</color>
+    <color name="colorUrgent">#B43B2B</color>
+    <color name="colorUrgentLight">#FFF1EB</color>
+    <color name="colorProgress">#26648E</color>
+    <color name="colorProgressLight">#EDF5FA</color>
+    <color name="colorAmberLight">#FEF3C7</color>
+    <color name="colorAmberText">#92400E</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+</resources>

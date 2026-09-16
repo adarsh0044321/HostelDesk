@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorCanvas">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Top App Bar -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorCanvas"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/colorCharcoal"
+            app:title="Ticket Details"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleMedium"
+            app:titleTextColor="@color/colorCharcoal" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Status Banner -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvTicketNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-semibold"
+                            android:text="TICKET #HD-8819"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvPriorityBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_tag_rounded"
+                            android:backgroundTint="@color/colorUrgentLight"
+                            android:fontFamily="sans-serif-semibold"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="HIGH"
+                            android:textColor="@color/colorUrgent"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/tvStatusBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_tag_rounded"
+                            android:backgroundTint="@color/colorSageLight"
+                            android:fontFamily="sans-serif-semibold"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="IN PROGRESS"
+                            android:textColor="@color/colorSage"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/tvIssueTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="serif"
+                        android:text="Bathroom washbasin tap leaking heavily"
+                        android:textColor="@color/colorCharcoal"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <!-- Meta: Category, Location, Date -->
+                    <TextView
+                        android:id="@+id/tvIssueMeta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Issue details · Reported"
+                        android:textColor="@color/colorSoftText"
+                        android:textSize="13sp" />
+
+                    <!-- Description Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/colorCard"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/colorBorder"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="STUDENT DESCRIPTION"
+                                android:textColor="@color/colorSoftText"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:lineSpacingExtra="3dp"
+                                android:text="The valve under the washbasin keeps dripping continuously. Water has started pooling on the bathroom floor."
+                                android:textColor="@color/colorCharcoal"
+                                android:textSize="14sp" />
+
+                            <!-- Initial Student Attachment if present -->
+                            <ImageView
+                                android:id="@+id/ivInitialPhoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:layout_marginTop="12dp"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Student Verification Action Card (Visible only when RESOLVED) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardVerificationPrompt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/colorSageLight"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/colorSage"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-semibold"
+                                android:text="Staff Marked This Issue as Resolved"
+                                android:textColor="@color/colorSage"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/tvResolutionSummary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Please inspect the repair in your room and verify whether the issue is resolved to close the ticket."
+                                android:textColor="@color/colorCharcoal"
+                                android:textSize="13sp" />
+
+                            <!-- Proof photo if attached by technician -->
+                            <ImageView
+                                android:id="@+id/ivResolutionProofPhoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp"
+                                android:layout_marginTop="10dp"
+                                android:scaleType="centerCrop"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="14dp"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnVerifyResolved"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="48dp"
+                                    android:layout_weight="1"
+                                    android:backgroundTint="@color/colorSage"
+                                    android:text="Yes, It's Fixed"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp"
+                                    android:singleLine="true"
+                                    android:ellipsize="none"
+                                    android:insetTop="0dp"
+                                    android:insetBottom="0dp"
+                                    android:paddingHorizontal="6dp"
+                                    app:cornerRadius="10dp"
+                                    app:icon="@drawable/ic_check_circle"
+                                    app:iconGravity="textStart"
+                                    app:iconSize="16dp"
+                                    app:iconPadding="4dp"
+                                    app:iconTint="@color/white" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnReopenIssue"
+                                    style="@style/Widget.Material3.Button.OutlinedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="48dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:text="No, Reopen"
+                                    android:textColor="@color/colorUrgent"
+                                    android:textSize="12sp"
+                                    android:singleLine="true"
+                                    android:ellipsize="none"
+                                    android:insetTop="0dp"
+                                    android:insetBottom="0dp"
+                                    android:paddingHorizontal="6dp"
+                                    app:cornerRadius="10dp"
+                                    app:icon="@drawable/ic_replay"
+                                    app:iconGravity="textStart"
+                                    app:iconSize="16dp"
+                                    app:iconPadding="4dp"
+                                    app:iconTint="@color/colorUrgent"
+                                    app:strokeColor="@color/colorUrgent" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Verified & Closed Confirmation Card (Visible when VERIFIED) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardVerifiedStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/colorSageLight"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/colorSage"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/ic_check_circle"
+                                    app:tint="@color/colorSage" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:fontFamily="sans-serif-semibold"
+                                    android:text="Work Verified &amp; Ticket Closed"
+                                    android:textColor="@color/colorSage"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvVerifiedDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Resident confirmed this repair has been completed satisfactorily."
+                                android:textColor="@color/colorCharcoal"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Assigned Staff Info -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardAssignedStaff"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/colorCard"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/colorBorder"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ASSIGNED CARETAKER / STAFF"
+                                android:textColor="@color/colorSoftText"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvStaffAvatar"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/bg_circle_primary"
+                                    android:backgroundTint="@color/colorPrimaryContainer"
+                                    android:gravity="center"
+                                    android:text="SK"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tvStaffName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif-semibold"
+                                        android:text="Assigned Technician"
+                                        android:textColor="@color/colorCharcoal"
+                                        android:textSize="14sp" />
+
+                                    <TextView
+                                        android:id="@+id/tvStaffContact"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:text="Assigned Technician · Maintenance"
+                                        android:textColor="@color/colorMutedText"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Activity Timeline Section -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="serif"
+                        android:text="Activity &amp; Progress Timeline"
+                        android:textColor="@color/colorCharcoal"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTimeline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="32dp"
+                        android:nestedScrollingEnabled="false" />
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

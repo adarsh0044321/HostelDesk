@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_warden"
+        android:icon="@drawable/ic_home"
+        android:title="Desk" />
+
+    <item
+        android:id="@+id/nav_tickets"
+        android:icon="@drawable/ic_list"
+        android:title="Tickets" />
+
+    <item
+        android:id="@+id/nav_staff_work"
+        android:icon="@drawable/ic_assignment"
+        android:title="Workbench" />
+
+    <item
+        android:id="@+id/nav_insights"
+        android:icon="@drawable/ic_analytics"
+        android:title="Insights" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_person"
+        android:title="Profile" />
+</menu>

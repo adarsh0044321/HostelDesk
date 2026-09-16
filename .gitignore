@@ -1,0 +1,72 @@
+# Git Ignore for HostelDesk Monorepo
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Build artifacts
+target/
+build/
+bin/
+out/
+*.class
+*.jar
+*.war
+
+# Android specific
+.gradle/
+local.properties
+captures/
+*.apk
+*.ap_
+*.aab
+*.dex
+output.json
+apks/
+backend_git_backup/
+.git_backend_backup/
+
+# Python & AI service
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+
+# Uploaded media storage
+uploads/
+backend/uploads/
+
+# Logs and environment
+*.log
+.env
+.env.local
+.env.*.local
