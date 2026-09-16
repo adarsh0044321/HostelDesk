@@ -16,10 +16,10 @@ Connect your Android device via USB with USB Debugging enabled, then run:
 .\install-apks.bat
 ```
 
-**Option B: Direct File Transfer**
-Copy the following APKs to your phone and install:
-- Student App: [`apks/hosteldesk-student-debug.apk`](file:///c:/Users/JAISINGH/OneDrive/Documents/antigravity/studenttdesk/apks/hosteldesk-student-debug.apk) (7.0 MB)
-- Admin/Staff App: [`apks/hosteldesk-admin-debug.apk`](file:///c:/Users/JAISINGH/OneDrive/Documents/antigravity/studenttdesk/apks/hosteldesk-admin-debug.apk) (6.9 MB)
+**Option B: Direct File Transfer / Releases**
+Download the latest APKs directly from the [GitHub Releases Page](https://github.com/adarsh0044321/HostelDesk/releases/tag/v1.0):
+- Student App: [HostelDesk-Student-v1.0.apk](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.0/HostelDesk-Student-v1.0.apk)
+- Admin/Staff App: [HostelDesk-Admin-v1.0.apk](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.0/HostelDesk-Admin-v1.0.apk)
 
 > [!NOTE]
 > `SessionManager.java` automatically detects and upgrades any stale localhost/emulator IPs (`10.0.2.2`, `127.0.0.1`, `10.110.0.170`) to the cloud production Render URL. You can also tap **Server Settings** on the login screen to switch servers at any time.
