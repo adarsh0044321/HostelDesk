@@ -1,147 +1,137 @@
-# HostelDesk 🏢⚡
+# HostelDesk
 
-> **Collegiate Housing Issue Management & Campus Residence Operations Platform**  
-> *Engineered for Universities, Student Dormitories, and Campus Facility Management.*
+**AI-assisted hostel issue management platform for reporting, routing, resolving, and learning from campus maintenance issues.**
 
+HostelDesk connects students, wardens, administrators, and maintenance staff through a structured workflow for handling hostel issues from initial reporting to resolution.
+
+> **REPORT → UNDERSTAND → ROUTE → WORK → VERIFY → RESOLVE → LEARN**
+
+[![Release](https://img.shields.io/badge/Release-v1.0-success.svg)](https://github.com/adarsh0044321/HostelDesk/releases/tag/v1.0)
 [![Platform](https://img.shields.io/badge/Platform-Android%208.0%2B%20%7C%20API%2026%2B-brightgreen.svg)](https://developer.android.com)
 [![Java](https://img.shields.io/badge/Java-17%20LTS-orange.svg)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.3-green.svg)](https://spring.io/projects/spring-boot)
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-teal.svg)](https://fastapi.tiangolo.com/)
-[![Database](https://img.shields.io/badge/Database-PostgreSQL%20%7C%20Supabase-blue.svg)](https://supabase.com/)
-[![Release](https://img.shields.io/badge/Release-v1.0-success.svg)](https://github.com/adarsh0044321/HostelDesk/releases/tag/v1.0)
+[![Database](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)](https://www.postgresql.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
-## 📌 Executive Summary
+## 📦 Direct Downloads (v1.0 Release)
 
-Collegiate housing facilities regularly suffer from disorganized maintenance tracking: complaints are recorded on paper registers or scattered across informal messaging channels with zero accountability, leading to repeated structural failures, unverified repairs, and frustrated residents.
+Pre-compiled production APK binaries ready for installation on Android 8.0+ devices:
 
-**HostelDesk** replaces these ad-hoc channels with an enterprise-grade, SLA-driven, multi-tenant ecosystem. It unites resident students, wardens, maintenance staff, and university leadership into a single cohesive platform powered by real-time notifications, photographic audit trails, deterministic lifecycle state machines, and intelligent AI issue categorization.
+| Application | Target Audience | Package | Download Link |
+| :--- | :--- | :--- | :--- |
+| **HostelDesk Student** | Resident Students | `com.adarshsingh.hosteldesk` | [📥 Download Student APK (v1.0)](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.0/HostelDesk-Student-v1.0.apk) |
+| **HostelDesk Admin** | Wardens, Staff & Directors | `com.adarshsingh.adminhosteldesk` | [📥 Download Admin APK (v1.0)](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.0/HostelDesk-Admin-v1.0.apk) |
 
----
-
-## 📱 Application Previews & Downloads
-
-| HostelDesk Student App | HostelDesk Admin & Staff App |
-| :---: | :---: |
-| <img src="docs/screenshots/student_preview.png" width="320" alt="Student App Preview" /> | <img src="docs/screenshots/admin_preview.png" width="320" alt="Admin App Preview" /> |
-| **For Resident Students** | **For Wardens, Staff & Directors** |
-| [📥 Download Student APK (v1.0)](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.0/HostelDesk-Student-v1.0.apk) | [📥 Download Admin APK (v1.0)](https://github.com/adarsh0044321/HostelDesk/releases/download/v1.0/HostelDesk-Admin-v1.0.apk) |
-
-> 💡 **Release Assets**: The latest signed debug APK binaries are available directly on the **[GitHub Releases Page](https://github.com/adarsh0044321/HostelDesk/releases)**.
+*Full changelog and release notes are published in the [Official GitHub Release](https://github.com/adarsh0044321/HostelDesk/releases/tag/v1.0).*
 
 ---
 
-## 🏗️ System Architecture
+## Overview
+
+Hostel maintenance issues are often reported through informal channels such as messages, calls, or verbal communication. This can make it difficult to track requests, assign responsibility, monitor progress, and identify recurring problems.
+
+HostelDesk provides a centralized system where students can report issues and the responsible staff can manage them through a defined workflow.
+
+Where supported by the implementation, AI assists in understanding issue descriptions and organizing information such as category and urgency, while wardens and administrators remain involved in operational decisions.
+
+---
+
+## What HostelDesk Does
+
+A typical issue moves through the following process:
+
+1. **Report** — A student submits a hostel issue using the available input methods.
+2. **Understand** — The system processes the report and structures relevant information.
+3. **Route** — A warden or administrator reviews and assigns the issue.
+4. **Work** — Maintenance staff handle the assigned task.
+5. **Verify** — The student can verify the completed work where supported.
+6. **Resolve** — The issue is closed after the appropriate workflow is completed.
+7. **Learn** — Historical issue data can help identify recurring problems and operational patterns.
+
+---
+
+## Key Features
+
+* Student issue reporting
+* Text-based issue descriptions
+* Image and/or voice-based reporting where implemented
+* AI-assisted issue understanding
+* Issue categorization
+* Urgency assessment where implemented
+* Warden/admin issue management
+* Maintenance assignment
+* Issue status tracking
+* Student resolution verification
+* Department/team-based routing where implemented
+* Institute-level administration where implemented
+* Recurring issue insights and analytics where implemented
+
+---
+
+## User Roles
+
+### Student
+Students can report hostel problems, provide relevant information, track their issues, and participate in the resolution workflow.
+
+### Warden / Administrator
+Wardens and administrators manage incoming issues, review reports, route work, and oversee the resolution process.
+
+### Maintenance Staff
+Maintenance personnel handle assigned work and update the progress of maintenance tasks.
+
+### Institute Administration
+The institute administration layer manages institutional users and operational structure where implemented, including relevant student, warden, staff, and department management.
+
+---
+
+## Architecture
 
 ```mermaid
 flowchart TD
-    subgraph ClientLayer [Native Mobile Client Layer]
-        SA["🎓 HostelDesk Student App<br/>(com.adarshsingh.hosteldesk)"]
-        AA["🛡️ HostelDesk Admin App<br/>(com.adarshsingh.adminhosteldesk)"]
-    end
+    Student["Student"]
+    App["HostelDesk Application"]
+    Backend["Backend API"]
+    AI["AI Issue Processing"]
+    Warden["Warden / Admin"]
+    Staff["Maintenance Staff"]
+    Verify["Student Verification"]
+    Analytics["Issue Analytics"]
 
-    subgraph Gateway [Cloud Transport]
-        GW["HTTPS REST API / Port 443<br/>Bearer JWT Authentication"]
-    end
-
-    subgraph BackendCluster [Cloud Backend Services - Render]
-        SB["⚡ Java Spring Boot 3 Engine<br/>• Spring Security 6 & JWT<br/>• Deterministic State Machine<br/>• Automated Department Routing<br/>• Circuit Breaker AI Fallback"]
-        AI["🤖 Python FastAPI Microservice<br/>• Real-time NLP Issue Classifier<br/>• Safety Hazard Detection<br/>• Recurring Cross-Room Cluster Detector"]
-    end
-
-    subgraph DataLayer [Persistence & Storage]
-        PG[("🐘 Supabase PostgreSQL<br/>Multi-Tenant Normalized Schema")]
-        FS["📁 Cloud File Storage<br/>Audit Proof & Photos"]
-    end
-
-    SA -->|Issue Filing & Verification| GW
-    AA -->|Dispatch & Work Completion| GW
-    GW --> SB
-    SB <-->|Async Classification| AI
-    SB <-->|Connection Pool / HikariCP| PG
-    SB -->|Multipart Proof Uploads| FS
+    Student --> App
+    App --> Backend
+    Backend --> AI
+    AI --> Warden
+    Warden --> Staff
+    Staff --> Backend
+    Backend --> Verify
+    Verify --> Student
+    Backend --> Analytics
 ```
+
+The exact architecture and responsibilities of each component are documented according to the current implementation in this repository.
 
 ---
 
-## 🌟 Core System Modules
+## Technology Stack
 
-### 1. 🎓 Student Resident Android App (`student-android`)
-- **Stitch Design Language**: Distinctive terracotta (`#BA5333`), clean off-white canvas (`#FAF8F5`), card surfaces, and responsive Material 3 layout.
-- **Room Vitals & Announcements**: Real-time room status, emergency contacts, and hostel-wide bulletin updates.
-- **AI-Assisted Issue Filing**: Real-time NLP categorization recommendation, safety hazard alert, and priority rating.
-- **Camera & Proof Attachment**: Live camera capture via secure Android `FileProvider` with thumbnail previews.
-- **Interactive Verification Loop**:
-  - Once a technician marks work completed, residents receive a prompt to inspect their room.
-  - **"Yes, It's Fixed!"**: Opens an inspection modal to award a 1–5 star rating and submit technician feedback.
-  - **"No, Still Broken"**: Reopens the ticket with a specific reason, notifying the warden and technician immediately.
-- **In-App Notification Stream**: Real-time notifications on ticket milestones (assigned, work started, resolved).
+The project uses the technologies present in the current implementation:
 
-### 2. 🛡️ Admin, Warden & Staff Android App (`admin-android`)
-- **Role-Adaptive Workspace**:
-  - **Warden View**: Real-time Residence Health Pulse (e.g. 94% operational), attention-required escalation queues, department dispatch matrix, technician assignment.
-  - **Maintenance Staff View**: Work order queues (`My Work`, `Dept Queue`, `Completed`), one-tap start work (`IN_PROGRESS`), and photographic proof upload on job completion.
-  - **Executive Portal (4-Factor Authentication)**: Dedicated directors portal strictly isolated from operational warden logins, enforcing **Institute Code**, **Official ID**, **Password**, and a **6-Digit Secret Security PIN**.
-- **Institution Registration & Provisioning**:
-  - Direct institutional onboarding with custom or auto-generated 6-digit Executive Security PINs stored directly on the Institute entity.
-- **Universal Multi-Status Filters**:
-  - Live filtering across `Submitted`, `Assigned`, `In Progress`, `Resolved`, and `Closed` tabs.
-
-### 3. ⚡ Java Spring Boot 3 Backend (`backend`)
-- **Clean Modular Monolith**: Distinct layers for controllers, services, repositories, security, and exception handling.
-- **Strict Multi-Tenant Isolation**: Every query and transaction is scoped by institute code, ensuring strict data boundaries between different colleges and universities.
-- **Deterministic State Machine**: Strictly prevents illegal state transitions (e.g., tickets cannot skip from `REPORTED` to `VERIFIED` without passing through technician completion).
-- **Circuit Breaker Routing**: Auto-routes categories to departments; if the Python AI microservice is offline, gracefully falls back to deterministic rule-based NLP classification without rejecting submissions.
-- **Full Test Suite**: 16 unit and integration test suites covering isolation, state transitions, authentication, and routing.
-
-### 4. 🤖 Python FastAPI AI Service (`ai-service`)
-- **FastAPI Microservice**: Asynchronous, high-concurrency classification engine.
-- **NLP Categorization**: Predicts maintenance departments (`PLUMBING`, `ELECTRICAL`, `CARPENTRY`, `CLEANING`, etc.) and priority scores with confidence percentages.
-- **Recurring Issue Cluster Detector**: Analyzes spatial and category clusters to flag recurring structural failures across rooms.
+| Layer | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Frontend / Mobile** | Native Android Java (API 26+, Material 3, Retrofit 2, ViewBinding) | User interface for students and administrators |
+| **Backend** | Java 17, Spring Boot 3.2 (Spring Security, Spring Data JPA, Hibernate, Flyway) | Application API and business logic |
+| **Database** | PostgreSQL 14+ (hosted on Supabase / AWS, embedded H2 test mode) | Persistent application data |
+| **AI** | Python 3.11, FastAPI, Uvicorn, scikit-learn | Issue understanding, categorization, and processing |
+| **Authentication** | Stateless JWT (HMAC-SHA256), BCrypt hashing, 4-Factor Executive PIN | User and role authentication |
+| **Build / Tooling** | Maven 3.8+ (Backend), Gradle 8.9 (Android), Docker, Git | Development, build automation, and deployment |
 
 ---
 
-## 🔄 Issue Lifecycle State Machine
-
-```mermaid
-stateDiagram-v2
-    [*] --> REPORTED : Student submits issue
-    REPORTED --> ASSIGNED : Auto-routed or Warden assigned
-    ASSIGNED --> IN_PROGRESS : Technician starts work
-    IN_PROGRESS --> AWAITING_VERIFICATION : Technician marks work complete
-    
-    AWAITING_VERIFICATION --> VERIFIED : Student confirms ("Yes, It's Fixed!")
-    AWAITING_VERIFICATION --> REOPENED : Student rejects ("Still Broken")
-    
-    REOPENED --> ASSIGNED : Re-assigned for follow-up
-    REOPENED --> IN_PROGRESS : Technician resumes repair
-    
-    VERIFIED --> [*] : Ticket Closed & Archived
-```
-
----
-
-## 🔐 Multi-Tenant & 4-Factor Executive Security
-
-```
-Operational Form (Warden / Staff)   ──► Rejects Institute Admins with HTTP 403
-Executive Portal (Directors / Admins) ──► Requires 4 Mandatory Factors:
-                                           1. Institute Code (e.g. JAI, NCH-001)
-                                           2. Institutional Email or ID
-                                           3. Master Account Password
-                                           4. 6-Digit Executive Security PIN
-```
-
-- **Strict Boundary Enforcement**: Institute Administrators cannot log in through operational forms, and wardens cannot access the Executive Portal.
-- **Stateless JWT Tokens**: Signed with HMAC-SHA256 containing user ID, role, hostel ID, and institute ID.
-- **BCrypt Encryption**: Passwords hashed with salt strength 10.
-
----
-
-## 📂 Repository Directory Structure
+## Project Structure
 
 ```text
 HostelDesk/
@@ -153,55 +143,90 @@ HostelDesk/
 │   └── app/src/main/res/        # Terracotta Theme, Layouts, Navigation
 ├── backend/                     # Java Spring Boot 3 Backend Service
 │   ├── src/main/java/           # Controllers, Entities, Repositories, Services, Security
-│   ├── src/main/resources/      # application.yml (Postgres & H2 Profiles)
-│   └── pom.xml                  # Maven Dependencies & Plugins
+│   ├── src/main/resources/      # application.yml, Flyway DB migrations (V1-V6)
+│   └── pom.xml                  # Maven Dependencies & Configuration
 ├── ai-service/                  # Python 3.11 FastAPI AI Classification Microservice
 │   ├── classifier.py            # NLP Classification & Priority Recommendation
 │   ├── clustering.py            # Recurring Infrastructure Issue Detector
-│   └── main.py                  # FastAPI Endpoints & Health Checks
+│   ├── main.py                  # FastAPI Endpoints & Health Checks
+│   └── requirements.txt         # Python Dependencies
+├── database/                    # Reference SQL Schemas and Seed Data
+│   ├── schema.sql               # Normalized PostgreSQL DDL Schema
+│   └── seed.sql                 # Baseline campus seed data
 ├── docs/                        # Architecture Diagrams & Screenshots
-│   └── screenshots/             # Application UI Previews
-├── apks/                        # Production APK Binaries (Uploaded to Releases)
-├── sync-backend-render.ps1      # Utility to sync backend changes to Render
-├── RELEASE_NOTES.md             # Official Changelog & Release Notes
-└── README.md                    # Master Project Documentation
+│   └── screenshots/             # Application UI Previews (Student & Admin)
+├── .env.example                 # Environment configuration template
+├── .gitignore                   # Repository ignore rules
+├── API.md                       # Public REST API Specification
+├── ARCHITECTURE.md              # Comprehensive Architecture Specification
+├── DATABASE.md                  # Database Schema & Relational Design
+├── LICENSE                      # MIT Open Source License
+├── README.md                    # Master Project Documentation
+├── RELEASE_NOTES.md             # Official v1.0 Launch Notes & Changelog
+├── SECURITY.md                  # Security Architecture & Policies
+├── SETUP.md                     # Local Development Setup & Build Guide
+├── TESTING.md                   # Automated Testing Protocols & QA Guide
+├── enable-usb-reverse.bat       # USB reverse port forwarding (Windows Batch)
+├── enable-usb-reverse.ps1       # USB reverse port forwarding (PowerShell)
+├── install-apks.bat             # Portable ADB APK installer script
+├── start-ai.ps1                 # Local AI microservice runner script
+├── start-backend.bat            # Local backend runner script (Batch)
+└── start-backend.ps1            # Local backend runner script (PowerShell)
 ```
 
 ---
 
-## 🚀 Getting Started & Local Development
+## Getting Started
 
 ### Prerequisites
-- **JDK 17 LTS** (e.g., Eclipse Temurin or Oracle JDK)
-- **Maven 3.8+**
-- **Android Studio Jellyfish / Koala** with Android SDK 34
-- **Python 3.11+** with `pip`
 
-### 1. Run the Python AI Service
+Install the tools required by the project:
+
+* **JDK 17 LTS** (OpenJDK, Eclipse Temurin, or Oracle JDK)
+* **Android Studio** (Koala or Jellyfish) with Android SDK 34
+* **Python 3.11+** with `pip` and virtual environment support
+* **Apache Maven 3.8+**
+* **Gradle 8.5+** (or use bundled `./gradlew`)
+* **PostgreSQL 14+** (or use built-in H2 profile for zero-config local testing)
+
+### Clone
+
 ```bash
-cd ai-service
-python -m venv venv
-# On Windows:
-.\venv\Scripts\activate
-# On Linux/macOS:
-source venv/bin/activate
-
-pip install -r requirements.txt
-python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+git clone https://github.com/adarsh0044321/HostelDesk.git
+cd HostelDesk
 ```
 
-### 2. Run the Spring Boot Backend
+### Environment Configuration
+
+Create the required environment configuration using the provided example:
+
+```bash
+cp .env.example .env
+```
+
+Configure only the variables required by the project.
+
+Never commit real credentials or API keys.
+
+### Run the Project
+
+Follow the component-specific instructions documented below.
+
+#### Backend
+
 ```bash
 cd backend
-# Run with in-memory H2 profile:
-mvn spring-boot:run -Dspring-boot.run.profiles=h2
 
-# Or run with cloud PostgreSQL profile:
+# Option A: Run with local PostgreSQL profile (configure .env or application.yml)
 mvn spring-boot:run -Dspring-boot.run.profiles=postgres
-```
-*The backend runs at `http://localhost:8080`. Health check available at `/actuator/health`.*
 
-### 3. Assemble Android Applications
+# Option B: Run with embedded H2 database (zero-configuration development mode)
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
+```
+Backend starts on port 8080. Health check endpoint: `http://localhost:8080/actuator/health`.
+
+#### Frontend / Mobile
+
 ```bash
 # Student Application APK
 cd student-android
@@ -211,48 +236,103 @@ cd student-android
 cd ../admin-android
 ./gradlew assembleDebug
 ```
-*Generated APKs will be located in `<app-dir>/app/build/outputs/apk/debug/app-debug.apk`.*
+*On Windows, use `gradlew.bat assembleDebug`.*
+
+#### AI Service (Optional)
+
+```bash
+cd ai-service
+python -m venv venv
+
+# Windows:
+.\venv\Scripts\activate
+# Linux / macOS:
+source venv/bin/activate
+
+pip install -r requirements.txt
+python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
 
 ---
 
-## 🔑 Pre-Seeded Live Credentials
+## Screenshots
 
-The backend is deployed live at **`https://hosteldesk-backend-pc8z.onrender.com`**. You can test the applications immediately using these credentials:
+Screenshots of the current application are available below:
+
+| HostelDesk Student App | HostelDesk Admin & Staff App |
+| :---: | :---: |
+| <img src="docs/screenshots/student_preview.png" width="340" alt="Student App Preview" /> | <img src="docs/screenshots/admin_preview.png" width="340" alt="Admin App Preview" /> |
+| **Student Resident Issue Reporting & Verification** | **Warden Dispatch & Maintenance Workbench** |
+
+---
+
+## Pre-Seeded Test Credentials
+
+The backend includes reference seed accounts for evaluation:
 
 | Organization | Role | Email / ID | Password | 3rd Factor PIN | Scope |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **JAI** | **Executive Director** | `adminjai` | `adminjai` | `112233` | Global Institute Administration |
-| **JAI** | **Warden** | `warden.jai@campus.edu` | `warden123` | — | North Campus Residence Wing |
-| **NCH-001** | **Executive Director** | `admin@campus.edu` | `admin123` | `112233` | Global Administration |
-| **NCH-001** | **Warden** | `warden.sharma@campus.edu` | `warden123` | — | Tagore & Shastri Halls |
-| **NCH-001** | **Maintenance Staff** | `suresh@campus.edu` | `staff123` | — | Plumbing Crew |
-| **NCH-001** | **Student Resident** | `aarav@campus.edu` | `student123` | — | Tagore Hall, Room 204 |
+| **`JAI`** | **Executive Director** | `adminjai` | `adminjai` | `112233` | Global Institute Administration |
+| **`JAI`** | **Warden** | `warden.jai@campus.edu` | `warden123` | — | Residence Operations |
+| **`NCH-001`** | **Executive Director** | `admin@campus.edu` | `admin123` | `112233` | Global Institute Administration |
+| **`NCH-001`** | **Warden** | `warden.sharma@campus.edu` | `warden123` | — | Dispatch & Verification Queue |
+| **`NCH-001`** | **Maintenance Staff** | `suresh@campus.edu` | `staff123` | — | Plumbing Department Tasks |
+| **`NCH-001`** | **Student Resident** | `aarav@campus.edu` | `student123` | — | Issue Reporting & Work Approval |
 
 ---
 
-## 🧪 Test Suite & Quality Assurance
+## Current Status
 
-Run the comprehensive automated test suite with a single command:
-```bash
-cd backend
-mvn clean test
-```
+HostelDesk is under active development.
 
-### Test Coverage Highlights:
-- **`AuthServiceTest`**: Authentication boundaries, password hashing, and executive rejection guards.
-- **`MultiTenantIsolationTest`**: Verifies zero data cross-leakage between different institutions.
-- **`IssueStateMachineTest`**: Validates the full lifecycle (`REPORTED` → `ASSIGNED` → `IN_PROGRESS` → `AWAITING_VERIFICATION` → `VERIFIED`) and prevents illegal state bypasses.
-- **`AiFallbackTest`**: Validates deterministic fallback classification when the external AI engine is offline.
-- **`RoutingEngineTest`**: Asserts correct category-to-department resolution.
+The repository contains the currently implemented functionality. Features that are still being developed or planned are listed separately in the roadmap rather than being presented as completed functionality.
 
----
+## Roadmap
 
-## 📄 License
+Planned development areas include:
 
-This project is distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more details.
+* Improved AI-assisted issue understanding
+* More detailed issue analytics
+* Recurring issue detection
+* Improved routing and assignment workflows
+* Notification improvements
+* Expanded institute administration
+* Production deployment
+* Further reliability and performance improvements
 
----
+The roadmap may change as development continues.
 
-## 👨‍💻 Author
+## Security
 
-Developed with care by **[Adarsh Singh](https://github.com/adarsh0044321)**.
+Do not commit:
+
+* API keys
+* Passwords
+* Authentication tokens
+* Private credentials
+* Production secrets
+* Private configuration files
+
+Use environment variables for sensitive configuration. See [`SECURITY.md`](SECURITY.md) for project security guidelines.
+
+## Contributing
+
+Contributions and suggestions are welcome.
+
+For development changes:
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Test the affected functionality.
+5. Submit a pull request with a clear description of the change.
+
+## License
+
+See the [`LICENSE`](LICENSE) file for the project's licensing terms.
+
+## Author
+
+**Adarsh Kumar Singh**
+
+Built as an independent software project focused on applying AI and modern application development to practical hostel management problems.

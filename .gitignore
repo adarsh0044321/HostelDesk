@@ -1,18 +1,27 @@
+# ========================================================
 # Git Ignore for HostelDesk Monorepo
+# ========================================================
 
-# OS and IDE files
+# Operating System & Filesystem
 .DS_Store
 Thumbs.db
+ehthumbs.db
+desktop.ini
 *.swp
 *.bak
+*~
+
+# IDEs & Editors
 .idea/
 *.iml
+*.iws
+*.ipr
 .vscode/
 .settings/
 .project
 .classpath
 
-# Build artifacts
+# Build Artifacts & Outputs
 target/
 build/
 bin/
@@ -20,8 +29,13 @@ out/
 *.class
 *.jar
 *.war
+*.ear
 
-# Android specific
+# JVM Crash Logs & Dumps
+hs_err_pid*.log
+replay_pid*.log
+
+# Android Specific
 .gradle/
 local.properties
 captures/
@@ -31,42 +45,44 @@ captures/
 *.dex
 output.json
 apks/
-backend_git_backup/
-.git_backend_backup/
 
-# Python & AI service
+# Python & AI Service
 __pycache__/
 *.py[cod]
-*$py.class
+*.class
 *.so
 .Python
 env/
 venv/
 .venv/
 ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
 .pytest_cache/
+*.egg-info/
+*.egg
 
-# Uploaded media storage
+# Media & Storage Uploads
 uploads/
 backend/uploads/
 
-# Logs and environment
+# Environment Variables & Secrets
 *.log
 .env
 .env.local
 .env.*.local
+
+# Internal Development Memory & Context (Preserved Locally, Excluded from Public Repo)
+BRAIN.md
+SESSION.md
+HANDOVER.md
+DECISIONS.md
+ROADMAP.md
+MEMORY.md
+AGENTS.md
+CLAUDE.md
+TASKS.md
+TODO.md
+*.checkpoint.md
+sync-backend-render.ps1
+backend_git_backup/
+.git_backend_backup/
+backend/run-postgres.ps1

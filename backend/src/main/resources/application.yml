@@ -15,7 +15,7 @@ spring:
 
 hosteldesk:
   jwt:
-    secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    secret: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
     expiration-ms: 86400000 # 24 hours
   ai-service:
     url: ${AI_SERVICE_URL:http://localhost:8000}
@@ -25,15 +25,15 @@ hosteldesk:
     upload-dir: ${UPLOAD_DIR:./uploads}
 
 ---
-# Default Profile: PostgreSQL (Supabase Cloud Database)
+# Default Profile: PostgreSQL
 spring:
   config:
     activate:
       on-profile: postgres
   datasource:
-    url: ${DB_URL:jdbc:postgresql://aws-0-ap-northeast-2.pooler.supabase.com:5432/postgres?sslmode=require}
-    username: ${DB_USERNAME:postgres.qxdhyoylzdaagvtlymhd}
-    password: ${DB_PASSWORD:jaisingh@044}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/hosteldesk}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 5

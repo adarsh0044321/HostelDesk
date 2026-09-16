@@ -1,23 +1,19 @@
 @echo off
 setlocal
-if "%JAVA_HOME%"=="" (
-    if exist "C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.8\jbr\bin\java.exe" (
-        set "JAVA_HOME=C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.8\jbr"
-    )
-)
 
 set "MVN_CMD="
 where mvn >nul 2>nul
 if %errorlevel% equ 0 (
     set "MVN_CMD=mvn"
-) else (
-    if exist "C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.8\plugins\maven\lib\maven3\bin\mvn.cmd" (
-        set "MVN_CMD=C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.8\plugins\maven\lib\maven3\bin\mvn.cmd"
-    )
+) else if defined M2_HOME (
+    if exist "%M2_HOME%\bin\mvn.cmd" set "MVN_CMD=%M2_HOME%\bin\mvn.cmd"
+) else if defined MAVEN_HOME (
+    if exist "%MAVEN_HOME%\bin\mvn.cmd" set "MVN_CMD=%MAVEN_HOME%\bin\mvn.cmd"
 )
 
 if "%MVN_CMD%"=="" (
-    echo [ERROR] Maven not found.
+    echo [ERROR] Apache Maven was not found on PATH or in standard environment variables.
+    echo Please install Maven 3.8+ or configure M2_HOME / MAVEN_HOME.
     exit /b 1
 )
 

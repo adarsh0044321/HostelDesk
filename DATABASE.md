@@ -141,16 +141,13 @@ Flyway migration `V3__seed_data.sql` and `database/seed.sql` pre-seeds:
 
 ---
 
-## 3. Supabase Cloud PostgreSQL Integration
-- **Platform**: Hosted PostgreSQL on Supabase AWS
-- **Project Ref**: `qxdhyoylzdaagvtlymhd`
-- **Region**: AWS `ap-northeast-2` (Seoul)
-- **Session Pooler Host**: `aws-0-ap-northeast-2.pooler.supabase.com`
+## 3. Database Connection & Cloud Integration
+- **Platform**: PostgreSQL 14+ (Local, Docker, or Cloud Hosted e.g. Supabase / AWS RDS)
 - **Port**: `5432`
-- **Database**: `postgres`
-- **Username**: `postgres.qxdhyoylzdaagvtlymhd`
-- **SSL Mode**: `require`
+- **Database**: `postgres` or `hosteldesk`
+- **SSL Mode**: `require` for cloud poolers; `prefer` / `disable` for local setups
 - **Connection Management**:
   - Automatically pooled via HikariCP in Spring Boot (`maximum-pool-size: 5`)
-  - Direct connection to cloud database by Render backend service in AWS backbone without campus network firewall limitations.
+  - Configurable via environment variables `DB_URL`, `DB_USERNAME`, and `DB_PASSWORD` (see `.env.example`).
+  - Supports offline testing and local execution via embedded PostgreSQL-compatible H2 mode (`-Dspring.profiles.active=dev`).
 

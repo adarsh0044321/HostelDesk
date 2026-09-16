@@ -29,52 +29,69 @@ Copy the following APKs to your phone and install:
 ## Local Development Setup (Optional)
 
 ### Prerequisites
-- **Java**: JDK 17 (verified with JetBrains JBR 17.0.12 or Oracle JDK 17+)
-- **Maven**: 3.9+ (or use IntelliJ bundled Maven at `C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.8\plugins\maven\lib\maven3\bin\mvn.cmd`)
-- **Gradle**: 8.5+ (or Gradle 8.9 wrapper at `C:\Users\JAISINGH\.gradle\wrapper\dists\gradle-8.9-bin\90cnw93cvbtalezasaz0blq0a\gradle-8.9\bin\gradle.bat`)
-- **Android SDK**: API 34+ installed at `C:\Users\JAISINGH\AppData\Local\Android\Sdk`
-- **Python**: 3.11+ (FastAPI, Uvicorn, Pydantic)
-- **PostgreSQL**: PostgreSQL 14+ or Supabase Cloud DB (or automated H2 PostgreSQL-compatible fallback for offline/development test suites)
+- **Java**: JDK 17 LTS (OpenJDK, Eclipse Temurin, or Oracle JDK)
+- **Maven**: 3.8+
+- **Gradle**: 8.5+ (or bundled Gradle wrapper `./gradlew`)
+- **Android SDK**: API 34+ (Android Studio Koala / Jellyfish recommended)
+- **Python**: 3.11+ (with pip and virtualenv)
+- **PostgreSQL**: PostgreSQL 14+ or cloud instance (or embedded H2 mode for offline testing)
 
 ---
 
 ### 1. Running the Python AI Service (Local)
-```powershell
-cd c:\Users\JAISINGH\OneDrive\Documents\antigravity\studenttdesk\ai-service
+```bash
+cd ai-service
+python -m venv venv
+
+# Windows:
+.\venv\Scripts\activate
+# Linux / macOS:
+source venv/bin/activate
+
+pip install -r requirements.txt
 python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
-Verify via browser/curl: `http://localhost:8000/health` or `http://localhost:8000/docs`.
+Verify via browser: `http://localhost:8000/health` or `http://localhost:8000/docs`.
 
 ---
 
 ### 2. Running the Java Spring Boot Backend (Local)
-```powershell
-cd c:\Users\JAISINGH\OneDrive\Documents\antigravity\studenttdesk\backend
-$env:JAVA_HOME = "C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.8\jbr"
-& "C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.8\plugins\maven\lib\maven3\bin\mvn.cmd" spring-boot:run
+```bash
+cd backend
+
+# Option A: Run with local PostgreSQL profile (configure .env or application.yml)
+mvn spring-boot:run -Dspring-boot.run.profiles=postgres
+
+# Option B: Run with embedded H2 PostgreSQL-compatible mode (zero setup needed)
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
 ```
-Backend starts on port 8080. Check health at: `http://localhost:8080/actuator/health`.
+Backend starts on port 8080. Health endpoint: `http://localhost:8080/actuator/health`.
 
 ---
 
 ### 3. Building the Android Applications from Source
-Set Java Home and Android Home:
-```powershell
-$env:JAVA_HOME = "C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.8\jbr"
-$env:ANDROID_HOME = "C:\Users\JAISINGH\AppData\Local\Android\Sdk"
-```
+
+Ensure `JAVA_HOME` points to JDK 17 and `ANDROID_HOME` points to your Android SDK.
 
 #### Build Student Android App
-```powershell
-cd c:\Users\JAISINGH\OneDrive\Documents\antigravity\studenttdesk\student-android
-& "C:\Users\JAISINGH\.gradle\wrapper\dists\gradle-8.9-bin\90cnw93cvbtalezasaz0blq0a\gradle-8.9\bin\gradle.bat" assembleDebug
+```bash
+cd student-android
+
+# Windows:
+gradlew.bat assembleDebug
+# Linux / macOS:
+./gradlew assembleDebug
 ```
 Output APK: `student-android/app/build/outputs/apk/debug/app-debug.apk`
 
 #### Build Admin/Staff Android App
-```powershell
-cd c:\Users\JAISINGH\OneDrive\Documents\antigravity\studenttdesk\admin-android
-& "C:\Users\JAISINGH\.gradle\wrapper\dists\gradle-8.9-bin\90cnw93cvbtalezasaz0blq0a\gradle-8.9\bin\gradle.bat" assembleDebug
+```bash
+cd admin-android
+
+# Windows:
+gradlew.bat assembleDebug
+# Linux / macOS:
+./gradlew assembleDebug
 ```
 Output APK: `admin-android/app/build/outputs/apk/debug/app-debug.apk`
 
